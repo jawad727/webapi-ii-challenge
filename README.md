@@ -55,7 +55,7 @@ A Blog Post in the database has the following structure:
 
 Configure the API to handle to the following routes:
 
-| Method | Endpoint       | Description                                                                                                                                                                 |
+| Method | Endpoint       | Description                                                                                                                                                                   |
 | ------ | -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | POST   | /api/posts     | Creates a post using the information sent inside the `request body`.                                                                                                        |
 | GET    | /api/posts     | Returns an array of all the post objects contained in the database.                                                                                                         |
@@ -84,12 +84,16 @@ When the client makes a `POST` request to `/api/posts`:
   - respond with HTTP status code `500` (Server Error).
   - return the following JSON object: `{ error: "There was an error while saving the post to the database" }`.
 
+===============================================================================
+
 When the client makes a `GET` request to `/api/posts`:
 
 - If there's an error in retrieving the _posts_ from the database:
   - cancel the request.
   - respond with HTTP status code `500`.
   - return the following JSON object: `{ error: "The posts information could not be retrieved." }`.
+
+===============================================================================
 
 When the client makes a `GET` request to `/api/posts/:id`:
 
@@ -103,6 +107,8 @@ When the client makes a `GET` request to `/api/posts/:id`:
   - respond with HTTP status code `500`.
   - return the following JSON object: `{ error: "The post information could not be retrieved." }`.
 
+===============================================================================
+
 When the client makes a `DELETE` request to `/api/posts/:id`:
 
 - If the _post_ with the specified `id` is not found:
@@ -114,6 +120,8 @@ When the client makes a `DELETE` request to `/api/posts/:id`:
   - cancel the request.
   - respond with HTTP status code `500`.
   - return the following JSON object: `{ error: "The post could not be removed" }`.
+
+===============================================================================
 
 When the client makes a `PUT` request to `/api/posts/:id`:
 
