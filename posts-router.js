@@ -81,7 +81,7 @@ router.delete('/:id', (req, res) => {
         })
         .catch(error => {
             res.status(500).json({
-                error: "user cant be removed"
+                error: "post cant be removed"
             })
         }) } 
         
